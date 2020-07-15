@@ -18,7 +18,7 @@ export default {
     //let url="https://www.easy-mock.com/mock/5b012c1fe6e1035843cd3aff/mockapi/table/list"    
     // axios.get(url).then(()=>{
     // })
-    let url="https://www.imooc.com/activity/servicetime"
+    let url="/api/activity/servicetime"
     jsonp(url,(err,res)=>{
       let result = res;
       this.data = result;
