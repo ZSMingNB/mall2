@@ -1,7 +1,7 @@
 let baseURL;
 //process的相关文档,获取nodejs当前进程的环境变量
 switch (process.env.NODE_ENV) {
-    case 'dev':
+    case 'development':
         baseURL = 'http://dev-mall-pre.springboot.cn/api';
         break;
     case 'test':

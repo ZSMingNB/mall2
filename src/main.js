@@ -4,7 +4,7 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
-import env from './env'  //不加./认为是插件
+import env from './env'  //不加./认为是插件会报错
 
 //根据前端的跨域方式做调整
 //axios.defaults.baseURL = 'http://www.baidu.com'; //后端与前端域名不一样的时候
