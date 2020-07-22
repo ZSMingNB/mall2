@@ -1,5 +1,5 @@
 <script>
-import storage from './storage'
+//import storage from './storage'
 export default {
   name: 'app',
   components: {
@@ -7,7 +7,7 @@ export default {
   },
   data(){
     return {
-   
+      res:{}
     }
   },
   mounted(){
@@ -15,7 +15,15 @@ export default {
     //storage.setItem('user',{a:1});
     //storage.setItem('abc',{a:1},'user');
     //storage.clear('a');
-    storage.clear('a','user');
+    //storage.clear('a','user');
+    //本地请求加载json的方式
+    // this.axios.get('/mock/user/login.json').then((res)=>{
+    //   this.res = res;
+    // });
+    //本地集成mock.js实现数据mock
+    this.axios.get('/user/login').then((res)=>{
+      this.res = res;
+    });
   }
 }
 </script>
