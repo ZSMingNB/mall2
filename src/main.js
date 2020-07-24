@@ -7,7 +7,7 @@ import App from './App.vue'
 //import env from './env'  //不加./认为是插件会报错
 
 //定义一个mock开关
-const mock = true;
+const mock = false;
 if(mock){
   require('./mock/api');
 }
