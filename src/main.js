@@ -4,6 +4,7 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueLazyLoad from 'vue-lazyload'
+import VueCookie from 'vue-cookie'
 import App from './App.vue'
 //import env from './env'  //不加./认为是插件会报错
 
@@ -33,11 +34,13 @@ axios.interceptors.response.use(function(response){
      window.location.href = '/#/login';
   }else{      //错误信息
     alert(res.msg);
+    return Promise.reject(res);
   }
 })
 
 //注册
 Vue.use(VueAxios,axios);
+Vue.use(VueCookie);
 Vue.use(VueLazyLoad,{
   loading:'/imgs/loading-svg/loading-bars.svg'
 });
