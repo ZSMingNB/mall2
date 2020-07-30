@@ -27,11 +27,16 @@ axios.defaults.timeout = 8000;
 axios.interceptors.response.use(function(response){
   //这个才是接口取到的值
   let res = response.data;
+  //获取链接路径
+  let path = location.hash;
   //=0为成功
   if(res.status == 0){
     return res.data;
   }else if(res.status == 10){  //=10为未登录
-     window.location.href = '/#/login';
+    if (path != '#/index'){
+      window.location.href = '/#/login';
+    }
+     
   }else{      //错误信息
     alert(res.msg);
     return Promise.reject(res);
